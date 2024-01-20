@@ -43,6 +43,7 @@ pub trait VariableBaseMSM: ScalarMul {
         bigints: &[<Self::ScalarField as PrimeField>::BigInt],
     ) -> Self {
         if Self::NEGATION_IS_CHEAP {
+            println!("Im here!");
             msm_bigint_wnaf(bases, bigints)
         } else {
             msm_bigint(bases, bigints)
